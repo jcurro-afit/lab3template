@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+  lab3: &default-service
+    build:
+      context: .
+      dockerfile: dockerfile
+      target: develop
+    environment:
+      DISPLAY:
+    image: lab3:yourname
+    # set user to your user id which is usually 1000:1000 to check you user id run `echo $(id -u):$(id -g)`
+    user: 1000:1000
+    volumes:
+      # passing through this file allows opening windows from the container in your host computer
+      - "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+      # pass the passwd file so it can know who user 1000 is
+      - "/etc/passwd:/etc/passwd"
+      # pass through data folder
+      - "/opt/data:/opt/data"
+      # pass through the .keras folder
+      - "/opt/data/.keras:/tmp/.keras"
+
+  lab3deploy:
+    <<: *default-service
+    build:
+      context: .
+      dockerfile: dockerfile
+      target: deploy
+    working_dir: /opt/project
+    command: python3 src/lab3.py

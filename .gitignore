@@ -1,0 +1,4 @@
+.idea
+*.pyc
+src/logs
+src/models
