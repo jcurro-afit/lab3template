@@ -65,4 +65,11 @@ In the previous section at one point the training and validation performance may
 After you are satisfied with your validation performance you then evaluate against your test set and publish (submit the lab).
 
 ## Deliverable
-Mark this network in your code however it should run in the final submission. Also included should be the final performance you achieved on the test set. You should also put your final performance in a comment. 
+Mark this network in your code however it should run in the final submission. Also included should be the final performance you achieved on the test set. You should also put your final performance in a comment.
+
+## Easier to Grade
+To grade this lab I will clone your repo and then in the project root run the command
+```bash
+docker-compose up --build lab3deploy
+```
+That should be enough to run the entire lab and show me all the output I have asked for except for the commented networks which I will look at the code directly for.
