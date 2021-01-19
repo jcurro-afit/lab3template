@@ -11,9 +11,3 @@ RUN apt-get update &&  DEBIAN_FRONTEND=noninteractive apt-get install -y --no-in
 COPY requirements.txt ./
 RUN python3 -m pip install --upgrade pip \
     && python3 -m pip install --no-cache-dir -r requirements.txt
-
-FROM develop as deploy
-# copy in source
-COPY src /opt/project/src
-# change permissions
-RUN chmod a+rwx -R /opt/project

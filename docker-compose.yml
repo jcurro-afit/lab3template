@@ -1,6 +1,6 @@
 version: '3.7'
 services:
-  lab3: &default-service
+  lab3:
     build:
       context: .
       dockerfile: Dockerfile
@@ -19,12 +19,7 @@ services:
       - "/opt/data:/opt/data"
       # pass through the .keras folder
       - "/opt/data/.keras:/tmp/.keras"
-
-  lab3deploy:
-    <<: *default-service
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: deploy
+      # mount in the project directory
+      - ".:/opt/project"
     working_dir: /opt/project
     command: python3 src/lab3.py
