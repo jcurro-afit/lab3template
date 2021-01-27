@@ -44,7 +44,7 @@ def new_york_city_airbnb():
         plt.show()
 
         # get the truth data and the prediction
-        truth = df[['price']].to_numpy()
+        truth = df[['price']].to_numpy()[:, 0]
         pred = results.predict(df).to_numpy()
 
         # get the root mean square error
