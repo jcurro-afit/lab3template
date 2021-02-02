@@ -23,4 +23,6 @@ services:
       # mount in the project directory
       - ".:/opt/project"
     working_dir: /opt/project
-    command: python3 src/lab3.py
+    command:
+      - python3
+      - src/lab3.py
