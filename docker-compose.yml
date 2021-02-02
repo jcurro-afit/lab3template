@@ -7,6 +7,7 @@ services:
       target: develop
     environment:
       DISPLAY:
+      TF_FORCE_GPU_ALLOW_GROWTH: 'true'
     image: lab3:yourname
     # set user to your user id which is usually 1000:1000 to check you user id run `echo $(id -u):$(id -g)`
     user: 1000:1000
