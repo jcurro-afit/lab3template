@@ -52,10 +52,11 @@ def new_york_city_airbnb():
         print(f"Linear Regression RMSE: {rmse}")
         
         # plot our truth vs. prediction
+        # this should fit a 45 degree line if we were "perfect"
         plt.plot(truth, pred, '.', alpha=0.1)
         plt.xlabel('$ price truth')
         plt.ylabel('$ price pred')
-        plt.title('Truth vs. Prediction')
+        plt.title('Linear Regression Truth vs. Prediction')
         plot_min = 0
         plot_max = 400
         plt.plot([plot_min, plot_max], [plot_min, plot_max], 'k')
@@ -63,6 +64,9 @@ def new_york_city_airbnb():
         plt.show()
 
     # do Steps 2-7 here
+
+    # Print Final model performance metric
+    # Final model performance metric is: XXX (write your metric in the comment)
 
 
 def plot_cm(actual: np.ndarray, prediction: np.ndarray):
@@ -73,13 +77,16 @@ def plot_cm(actual: np.ndarray, prediction: np.ndarray):
     :param prediction:  the predicted classes
     :return: None
     """
+    # use the probabilities to make actual predictions of each class
     prediction[prediction > 0.5] = 1
     prediction[prediction <= 0.5] = 0
+    # use pandas to make a confusion matrix
     data = {'y_Actual': actual.squeeze(),
             'y_Predicted': prediction.squeeze()
             }
     df = pd.DataFrame(data, columns=['y_Actual', 'y_Predicted'])
     confusion_matrix = pd.crosstab(df['y_Actual'], df['y_Predicted'], rownames=['Actual'], colnames=['Predicted'])
+    # use seaborn to plot a heatmap of the confusion matrix
     sn.heatmap(confusion_matrix, annot=True)
     plt.show()
 
@@ -120,6 +127,9 @@ def titanic():
         plot_cm(truth, pred)
 
     # do steps 2-7 here
+
+    # Print Final model performance metric
+    # Final model performance metric is: XXX (write your metric in the comment)
 
 
 def main():
