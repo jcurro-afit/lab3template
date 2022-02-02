@@ -2,7 +2,7 @@
 In this lab we will practice the universal workflow of machine learning. You will practice each step and demonstrate proficiency through commented code and plots as directed. There will be two datasets in this lab to show both classification and regression problems.
 
 ## New York City Airbnb Open Data
-Our first problem will be to determine the price of a room in NYC. The dataset we will be using is the `New York City Airbnb Open Data` dataset available on kaggle [here](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data). For reference, a linear regression model was able to achieve a root mean square error (RMSE) of $250 across the entire dataset.
+Our first problem will be to determine the price of a room in NYC. The dataset we will be using is the `New York City Airbnb Open Data` dataset available on kaggle [here](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data). For reference, a linear regression model was able to achieve a mean absolute error (MAE) of $75 across the entire dataset.
 
 ## Titanic Survivors
 Our second problem will be to determine if a passenger of the Titanic survived or not. The dataset we will be using is from Google examples and is available [here](https://storage.googleapis.com/tf-datasets/titanic/train.csv). For reference, a linear regression was able to achieve an accuracy of about 81% on the entire dataset. 
